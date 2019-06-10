@@ -1,11 +1,12 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React, { Fragment} from 'react';
+
+import RouteIndex from './Components/Route/index';
+
 function App() {
   return (
-    <div className="App">
-      <h4>Hello</h4> 
-      <Button>My TEst button</Button>
-    </div>
+    <Fragment>
+      <RouteIndex />
+    </Fragment>
   );
 }
 
