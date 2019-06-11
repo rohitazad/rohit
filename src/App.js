@@ -1,11 +1,12 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React, { Fragment} from 'react';
+
+import AppRootComponent from './App/AppRoot';
+
 function App() {
   return (
-    <div className="App">
-      <h4>Hello</h4> 
-      <Button>My TEst button</Button>
-    </div>
+    <Fragment>
+      <AppRootComponent />
+    </Fragment>
   );
 }
 
