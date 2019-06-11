@@ -67,7 +67,7 @@ class HeaderIndex extends Component{
                     <div className={`collapse navbar-collapse ${this.state.mobileClass ? 'show': ''}`} id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                        <NavLink to='/' activeClassName="active" exact={true} className="nav-link">Home <span className="sr-only">(current)</span></NavLink>
+                        <NavLink to='/' activeClassName="active" exact={true} className="nav-link">Home</NavLink>
                         </li>
                         <li className="nav-item">
                         <NavLink activeClassName="active" className="nav-link" to="/about-us">About</NavLink>

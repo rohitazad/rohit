@@ -1,11 +1,11 @@
 import React, { Fragment} from 'react';
 
-import RouteIndex from './Components/Route/index';
+import AppRootComponent from './App/AppRoot';
 
 function App() {
   return (
     <Fragment>
-      <RouteIndex />
+      <AppRootComponent />
     </Fragment>
   );
 }
