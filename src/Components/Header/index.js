@@ -87,6 +87,11 @@ class HeaderIndex extends Component{
                         </a>
                         <NavDropDown classDropdownMenu={classDropdownMenu} linkData={this.state.childDataNav} />
                         </li>
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link" to="/course-list">
+                                Course
+                            </NavLink>
+                        </li>
                     </ul>
                     </div>
                 </nav>

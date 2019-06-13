@@ -8,6 +8,7 @@ import HeaderIndex from '../Components/Header/index';
 import MainIndex from '../Container/Main/index';
 import AboutUsIndex from '../Container/AboutUs/index';
 import ContactUsIndex from '../Container/ContactUs/index';
+import CourseComponent from '../Container/Course/index';
 
 
 class RoutesComponent extends Component{
@@ -20,6 +21,7 @@ class RoutesComponent extends Component{
                         <Route exact path="/" component={MainIndex} />
                         <Route path="/about-us" component={AboutUsIndex} />
                         <Route path="/contact-us" component={ContactUsIndex} />
+                        <Route path="/course-list" component={CourseComponent} />
                     </Switch>
                 </Router>
             </Fragment>
