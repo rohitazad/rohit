@@ -3,6 +3,11 @@ import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
 import * as courseActions from "../../Redux/Actions/courseActions";
 import PropsTypes from "prop-types";
+import UserList from "./UserList";
+import { NavLink } from "react-router-dom";
+import { fetchAllPosts } from "../../Redux/Actions/index";
+
+//import axios from "axios";
 
 class CourseComponent extends Component {
   constructor(props) {
@@ -12,6 +17,36 @@ class CourseComponent extends Component {
       course: []
     };
   }
+
+  componentDidMount() {
+    // let payload = {
+    //   token: "Lg6AcEePOsJbldWFXuGo4g",
+    //   data: {
+    //     name: "nameFirst",
+    //     email: "internetEmail",
+    //     phone: "phoneHome",
+    //     _repeat: 300
+    //   }
+    // };
+    // axios({
+    //   method: "post",
+    //   url: "https://app.fakejson.com/q",
+    //   data: payload
+    // }).then(function(resp) {
+    //   // Do something with fake data
+    //   console.log("myfacekapi ", resp);
+    // });
+    // axios
+    //   .get("https://jsonplaceholder.typicode.com/posts/1", {})
+    //   .then(res => {
+    //     console.log("res", res);
+    //   })
+    //   .catch(e => {
+    //     console.log("err", e);
+    //   });
+    this.props.dispatch(fetchAllPosts());
+  }
+
   submitHandler = e => {
     e.preventDefault();
     //console.log('form Submit', e);
@@ -28,6 +63,7 @@ class CourseComponent extends Component {
     this.setState({ course });
   };
   render() {
+    console.log("my new post resulce data", this.props);
     return (
       <Container>
         Add Course
@@ -44,6 +80,11 @@ class CourseComponent extends Component {
         {this.props.courses.map(course => {
           return <div key={course.title}>{course.title}</div>;
         })}
+        <hr />
+        <NavLink className="nav-link" to="/course-list/user-add">
+          Add User
+        </NavLink>
+        <UserList userList={this.props.posts} />
       </Container>
     );
   }
@@ -57,7 +98,8 @@ CourseComponent.propsTypes = {
 function mapStateToProps(state) {
   //debugger;
   return {
-    courses: state.courses
+    courses: state.courses,
+    posts: state.posts
   };
 }
 
